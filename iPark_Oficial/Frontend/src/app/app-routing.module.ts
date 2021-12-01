@@ -29,6 +29,10 @@ const routes: Routes = [
 
   },
   {
+    path:'parqueadero',
+    loadChildren:() => import ("./modulos/parqueadero/parqueadero.module").then(x => x.ParqueaderoModule)
+  },
+  {
     path:'"/"',
     component:ErrorComponent
   }
