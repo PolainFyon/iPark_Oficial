@@ -43,7 +43,7 @@ export class ClienteController {
   async identificarCliente(
     @requestBody() credenciales : Credenciales 
   ){
-    let p = await this.servicioAutenticacion.IdentificarPersona(credenciales.usuario, credenciales.clave)
+    let p = await this.servicioAutenticacion.IdentificarCliente(credenciales.usuario, credenciales.clave)
     if(p){
       let token = this.servicioAutenticacion.GenerarTokenJWT(p);
       return{

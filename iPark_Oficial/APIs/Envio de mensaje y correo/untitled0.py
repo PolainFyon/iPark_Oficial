@@ -32,8 +32,8 @@ def sms():
         message = client.messages \
                         .create(
                              body=contenido,
-                             from_='+15042948819',
-                             to='+57'+destino
+                             from_='+19363123914',
+                             to='+57' + destino
                              )
         
         print(message.sid)
@@ -46,8 +46,9 @@ def email():
     destino=request.args.get("correo_destino")
     asunto=request.args.get("asunto")
     mensaje=request.args.get("contenido")
+    
     message = Mail(
-    from_email='oara1995@gmail.com',
+    from_email='oareginoa@eafit.edu.co',
     to_emails=destino,
     subject=asunto,
     html_content=mensaje)
@@ -59,7 +60,7 @@ def email():
         print(response.headers)
         return "Correo electronico enviado"
     except Exception as e:
-        print(e.message)
+        #print(e.message)
         return "Error enviando el mensaje"
         
 
